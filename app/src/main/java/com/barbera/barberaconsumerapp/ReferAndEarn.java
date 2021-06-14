@@ -122,7 +122,7 @@ public class ReferAndEarn extends AppCompatActivity {
         Map<String, Object> map = new HashMap<>();
         String coupon = "BARBERA"+(int)(Math.random()*1000);
         map.put("couponCode",coupon);
-        map.put("description","10% off on bookings upto Rs.200");
+        map.put("description","Rs.50 off on booking amount above 300");
         map.put("used","N");
         FirebaseFirestore.getInstance().collection("AppData").document("Earn&Refer").collection("EligibleCustomers")
                 .document(FirebaseAuth.getInstance().getCurrentUser().getUid()).set(map).addOnCompleteListener(task -> {

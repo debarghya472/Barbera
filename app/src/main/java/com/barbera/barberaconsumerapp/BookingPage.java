@@ -962,9 +962,10 @@ public class BookingPage extends AppCompatActivity implements CheckTermDialog.Ch
                                                     .collection("EligibleCustomers")
                                                     .document(FirebaseAuth.getInstance().getCurrentUser().getUid()).get()
                                                     .addOnCompleteListener(task1 -> {
-                                                        if (task1.getResult().get("couponCode").toString().equals(couponcodeEditText.getText().toString().trim())){
+                                                        if (task1.getResult().contains("couponCode") && task1.getResult().get("couponCode").toString().equals(couponcodeEditText.getText().toString().trim()) && BookingTotalAmount>300){
                                                             if(task1.getResult().get("used").toString().equals("N")) {
-                                                                BookingTotalAmount = (BookingTotalAmount > 100 ? BookingTotalAmount - 50 : BookingTotalAmount / 2);
+
+                                                                BookingTotalAmount = (BookingTotalAmount > 300 ? BookingTotalAmount - 50 : BookingTotalAmount);
                                                                 totalAmount.setText("Total Amount Rs" + BookingTotalAmount + "(Coupon Applied)");
                                                                 isReferApplied =true;
                                                                 isCouponApplied = true;
@@ -974,12 +975,19 @@ public class BookingPage extends AppCompatActivity implements CheckTermDialog.Ch
                                                                 couponApply.setEnabled(false);
                                                                 Toast.makeText(getApplicationContext(), "Coupon Applied Successfully.", Toast.LENGTH_LONG).show();
                                                             }else{
-                                                                couponcodeEditText.setError("Already Used");
+                                                                if(BookingTotalAmount<300)
+                                                                    couponcodeEditText.setError("Amount Must be above Rs.300");
+                                                                else {
+                                                                    couponcodeEditText.setError("No Such Coupons Exist");
+
+                                                                }
                                                                 couponcodeEditText.requestFocus();
                                                             }
                                                         } else {
-                                                            couponcodeEditText.setError("No Such Coupons Exist");
-                                                            couponcodeEditText.requestFocus();
+                                                            if(BookingTotalAmount<300) {
+                                                                couponcodeEditText.setError("Booking amount should be greater than 300");
+                                                                couponcodeEditText.requestFocus();
+                                                            }
                                                         }
 
                                                     });
