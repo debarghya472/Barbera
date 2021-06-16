@@ -12,7 +12,7 @@
 5. Lastly connect your app to firebase. To verify if your app is connected to firebase, check google-services.json inside app/
 
 ## Downlaod App 
-  Download a stable version of this application on Play Store: ``https://play.google.com/store/apps/details?id=com.barbera.barberaconsumerapp``
+  Download a stable version of this application on Play Store: [``https://play.google.com/store/apps/details?id=com.barbera.barberaconsumerapp``](https://play.google.com/store/apps/details?id=com.barbera.barberaconsumerapp)
 
 ## How to Contribute 
 1. Create issues for any sort of bugs/improvements.
