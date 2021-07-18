@@ -1084,36 +1084,47 @@ public class BookingPage extends AppCompatActivity implements CheckTermDialog.Ch
     }
 
     private void getRegion () {
-        double radius3 = 1685.09;
-        double radius4 = 1361.44;
-        double radius5 = 2351.31;
-        double radius6 = 2080.72;
-        double radius7 = 1854.92;
-        double radius8 = 2448.73;
-        double radius9 = 1655.59;
-        double radius10 = 1399.92;
-        double radius11 = 2227.10;
-        double radius12 = 1881.67;
+        double radius3 = MainActivity.radius3;
+        double radius4 =MainActivity.radius4;
+        double radius5 =MainActivity.radius5;
+        double radius6 =MainActivity.radius6;
+        double radius7 =MainActivity.radius7;
+        double radius8 = MainActivity.radius8;
+        double radius9 = MainActivity.radius9;
+        double radius10 = MainActivity.radius10;
+        double radius11 = MainActivity.radius11;
+        double radius12 =MainActivity.radius12;
 
-        if (getdistanceinkm(new LatLng(26.956962, 75.77664)) * 1000 <= radius3) {
+        LatLng center3 =MainActivity.center3;
+        LatLng center4 =MainActivity.center4;
+        LatLng center5=MainActivity.center5;
+        LatLng  center6= MainActivity.center6;
+        LatLng  center7 =MainActivity.center7;
+        LatLng center8 =MainActivity.center8;
+        LatLng center9 =MainActivity.center9;
+        LatLng center10 = MainActivity.center10;
+        LatLng center11 =MainActivity.center11;
+        LatLng center12 =MainActivity.center12;
+
+        if (getdistanceinkm(center3) * 1000 <= radius3) {
             region = 1;
-        } else if (getdistanceinkm(new LatLng(26.939211, 75.795793)) * 1000 <= radius4) {
+        } else if (getdistanceinkm(center4) * 1000 <= radius4) {
             region = 2;
-        } else if (getdistanceinkm(new LatLng(26.896277, 75.783537)) * 1000 <= radius5) {
+        } else if (getdistanceinkm(center5) * 1000 <= radius5) {
             region = 3;
-        } else if (getdistanceinkm(new LatLng(26.858152, 75.765343)) * 1000 <= radius6) {
+        } else if (getdistanceinkm(center6) * 1000 <= radius6) {
             region = 4;
-        } else if (getdistanceinkm(new LatLng(26.822310, 75.769312)) * 1000 <= radius7) {
+        } else if (getdistanceinkm(center7) * 1000 <= radius7) {
             region = 5;
-        } else if (getdistanceinkm(new LatLng(26.823396, 75.862217)) * 1000 <= radius8) {
+        } else if (getdistanceinkm(center8) * 1000 <= radius8) {
             region = 6;
-        } else if (getdistanceinkm(new LatLng(26.900915, 75.829059)) * 1000 <= radius9) {
+        } else if (getdistanceinkm(center9) * 1000 <= radius9) {
             region = 7;
-        } else if (getdistanceinkm(new LatLng(26.880131, 75.812279)) * 1000 <= radius10) {
+        } else if (getdistanceinkm(center10) * 1000 <= radius10) {
             region = 8;
-        } else if (getdistanceinkm(new LatLng(26.814549, 75.820629)) * 1000 <= radius11) {
+        } else if (getdistanceinkm(center11) * 1000 <= radius11) {
             region = 9;
-        } else if (getdistanceinkm(new LatLng(26.850078, 75.804790)) * 1000 <= radius12) {
+        } else if (getdistanceinkm(center12) * 1000 <= radius12) {
             region = 10;
         } else if (getdistanceinkm(new LatLng(26.930256, 75.875947)) * 1000 <= 8101.33 || getdistanceinkm(new LatLng(26.943649, 75.748845)) * 1000 <= 1718.21 || getdistanceinkm(new LatLng(26.949311, 75.714512)) * 1000 <= 1764.76) {
             region = 11;

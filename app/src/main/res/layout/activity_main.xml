@@ -111,6 +111,7 @@
             </androidx.cardview.widget.CardView>
             <RelativeLayout
                     android:id="@+id/Offers"
+                    android:visibility="gone"
                     android:background="@drawable/ofc"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
